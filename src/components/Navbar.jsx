@@ -1,8 +1,7 @@
 import React from 'react';
-import { Button, Menu, Typography, Avatar } from 'antd';
+import { Button, Menu, Typography, Avatar, MenuProps } from 'antd';
 import { Link } from 'react-router-dom'
-import { HomeOutlined, MoneyCollectFilled, BulbOutlined, 
-  FundOutlined, MenuOutlined } from '@ant-design/icons';
+import { HomeOutlined, MoneyCollectFilled, BulbOutlined, FundOutlined } from '@ant-design/icons';
 
 import icon from '../images/cryptocurrency.png'
 
@@ -12,21 +11,21 @@ const Navbar = () => {
       <div className='logo-container'>
         <Avatar src={icon} size='large' />
         <Typography.Title level={2} className='logo'>
-          <link to="/">Cryptoverse</link>
+          <Link to="/">Cryptoverse</Link>
         </Typography.Title>
         {/* <Button className='menu-control-container'></Button> */}
       </div>
       <Menu theme='dark' >
-        <Menu.Item icon={HomeOutlined} >
+        <Menu.Item icon={<HomeOutlined />} >
           <Link to='/'>Home</Link>
         </Menu.Item>
-        <Menu.Item icon={FundOutlined} >
+        <Menu.Item icon={<FundOutlined />} >
           <Link to='/cryptocurrencies'>Cryptocurrencies</Link>
         </Menu.Item>
-        <Menu.Item icon={MoneyCollectFilled} >
+        <Menu.Item icon={<MoneyCollectFilled />} >
           <Link to='/exchanges'>Exchanges</Link>
         </Menu.Item>
-        <Menu.Item icon={BulbOutlined} >
+        <Menu.Item icon={<BulbOutlined />} >
           <Link to='/news'>News</Link>
         </Menu.Item>
       </Menu>
