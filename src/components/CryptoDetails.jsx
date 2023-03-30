@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import HTMLReactParser from "html-react-parser";
+// import HTMLReactParser from "html-react-parser";
 import { useParams } from "react-router-dom";
 import millify from "millify";
 import { Col, Row, Typography, Select } from "antd";
@@ -44,7 +44,8 @@ const CryptoDetails = () => {
     { title: "Rank", value: cryptoDetails?.rank, icon: <NumberOutlined /> },
     {
       title: "24h Volume",
-      value: `$ ${cryptoDetails?.volume && millify(cryptoDetails?.volume)}`,
+      // value: `$ ${cryptoDetails?.volume && millify(cryptoDetails?.volume)}`,
+      value: `$ ${cryptoDetails?.["24hVolume"]  && millify(cryptoDetails?.["24hVolume"] )}`,
       icon: <ThunderboltOutlined />,
     },
     {
@@ -57,8 +58,7 @@ const CryptoDetails = () => {
     {
       title: "All-time-high(daily avg.)",
       value: `$ ${
-        cryptoDetails?.allTimeHigh?.price &&
-        millify(cryptoDetails?.allTimeHigh?.price)
+        cryptoDetails?.allTimeHigh?.price && millify(cryptoDetails?.allTimeHigh?.price)
       }`,
       icon: <TrophyOutlined />,
     },
@@ -94,19 +94,18 @@ const CryptoDetails = () => {
     {
       title: "Circulating Supply",
       value: `$ ${
-        cryptoDetails?.supply?.circulating &&
-        millify(cryptoDetails?.supply?.circulating)
+        cryptoDetails?.supply?.circulating && millify(cryptoDetails?.supply?.circulating)
       }`,
       icon: <ExclamationCircleOutlined />,
     },
   ];
 
   return (
+    <React.Fragment>
     <Col className="coin-detail-container">
       <Col className="coin-heading-container">
         <Title level={2} className="coin-name">
-          {cryptoDetails?.name} ({cryptoDetails?.slug})
-          {/* {data?.data?.coin.name} ({data?.data?.coin.symbol}) Price */}
+          {data?.data?.coin.name} ({data?.data?.coin.symbol}) Price
         </Title>
         <p>
           {cryptoDetails?.name} live price in US Dollar (USD). View value
@@ -170,11 +169,13 @@ const CryptoDetails = () => {
         </Col>
       </Col>
       <Col className="coin-desc-link">
-        <Row className="coin-desc">
+        <Row className="coin-desc" >
           <Title level={3} className="coin-details-heading">
             What is {cryptoDetails?.name}?
           </Title>
-          {HTMLReactParser(cryptoDetails?.description)}
+          {/* {HTMLReactParser(cryptoDetails?.description)} */}
+          <Row dangerouslySetInnerHTML={{__html:cryptoDetails.description}}>
+          </Row>          
         </Row>
         <Col className="coin-links">
           <Title level={3} className="coin-details-heading">
@@ -193,6 +194,7 @@ const CryptoDetails = () => {
         </Col>
       </Col>
     </Col>
+    </React.Fragment>
   );
 };
 
