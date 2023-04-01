@@ -4,7 +4,7 @@ This application (**cryptor-app**) is built in React JS using Redux Toolkit and 
 
 ## Source
 
-Based on a tutorial by 'JavaScriot Mastery' channel in Youtube [Tutorial](https://www.youtube.com/watch?v=9DDX3US3kss) 
+Based on a tutorial by 'JavaScript Mastery' channel in Youtube [Tutorial](https://www.youtube.com/watch?v=9DDX3US3kss) 
 
 ### Architecture:
 
