@@ -8,7 +8,7 @@ Based on a tutorial by 'JavaScript Mastery' channel in Youtube [Tutorial](https:
 
 ### Architecture:
 
-# in src:
+#### in src:
 
 **app:**
 
