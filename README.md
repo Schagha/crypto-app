@@ -1,8 +1,10 @@
 # 📣 **Summary**
 
-This application (**cryptor-app**) is built in React JS using Redux Toolkit and React-Router-Dom, UI Creation using Ant Design, creating charts using Chart.js, and fetching data from multiple sources using RapidAPI.
+This application (**cryptor-app**) is built in React JS using Redux Toolkit and React-Router-Dom, UI Creation using Ant Design, creating charts using Chart.js, and fetching data from multiple sources using RapidAPI. The app is deployed in netlify.
 
-# **App URL:** https://cryptocurrenciesreactapp.netlify.app/ 
+# **App URL:** 
+
+https://cryptocurrenciesreactapp.netlify.app/ 
 
 ## Source
 
